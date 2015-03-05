@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 This website is mainly designed for people who don't know much about stock market and the terms used for every stocks like 'PERCENT CHANGE', '52-WEEK LOW/HIGH' etc. This webapp contains top 100 stocks from India which are registered in Indian stock market.
 
 
