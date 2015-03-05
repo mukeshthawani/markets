@@ -1,0 +1,9 @@
+<h1>Choose the data you want for {{ stocks }} stock</h1>
+
+
+<ul>
+    {% for choice in total_choice %}
+    <li><a href="{% url 'stocks:data' stocks_id=stocks.id choice_id=choice.id %}">{{ choice.choice_text }}</a></li>
+    {% endfor %}
+</ul>
+
