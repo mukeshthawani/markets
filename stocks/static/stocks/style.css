@@ -4,3 +4,20 @@ top:50px;
 height:160px;
 }
 
+.col-lg-6{
+position: absolute;
+right: 300px;
+}
+.row{
+position: relative;
+top: 300px;
+left: 100px;
+}
+
+.page-header{
+position: relative;
+top: 250px; 
+left: 70px;
+}
+
+
