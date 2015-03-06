@@ -15,7 +15,8 @@ def search(request):
     else:
         # If no query was entered, simply return all objects.
         results = ""
-    context = {'results': results}
+    all_stocks = Stocks.objects.all()
+    context = {'results': results, 'all_stocks': all_stocks}
     return render(request, 'stocks/search.html', context)
 
 
