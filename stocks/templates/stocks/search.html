@@ -23,13 +23,8 @@ html lang="en"><head>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style type="text/css">
-        .col-lg-6{
-        position: absolute;
-        left: 200px
-        }
-
-    </style>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'stocks/style.css' %}">
   </head>
 
   <body gram_dict="true">
@@ -70,7 +65,7 @@ html lang="en"><head>
 
     <div class="col-lg-6">
         <form class="input-group" style="height: 10px">
-            <input type="text" class="form-control" formaction="{% url 'stocks:search' %}" formmethod="GET" name="q" placeholder="Search for...">
+            <input type="text" class="form-control" formaction="{% url 'stocks:search' %}" formmethod="GET" name="q" placeholder="Search for stocks(symbol)...">
             <span class="input-group-btn">
                 <button class="btn btn-primary" type="submit">search</button>
             </span>
@@ -86,6 +81,33 @@ html lang="en"><head>
             For Example "TCS", "TATAMOTORS"</p>
         {% endif %}
     </div>
+    <div class="page-header">
+        <h1> TOP 100 STOCKS
+            <small> According to market capitalization</small>
+        </h1>
+    </div>
+    <div class="row">
+        {% for stock in all_stocks %}
+        <div class="col-sm-3">
+            <a href="{% url 'stocks:data' stock.id %}">{{ stock.full_name }}</a>
+            <br><br>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+    </div>
+    <div class="row">
+        {% endif %}
+        {% endfor %}
+    </div>
+
+
+
+    <!--<div class="container">-->
+        <!--<ul>-->
+            <!--{% for stock in all_stocks %}-->
+            <!--<li><a>{{ stock.symbol }}</a></li>-->
+            <!--{% endfor %}-->
+        <!--</ul>-->
+    <!--</div>-->
 
 
 
