@@ -14,7 +14,6 @@ def Definition(term):
     text = urllib.urlopen(url).read()
     soup = BeautifulSoup(text)
     # finding content with 'p' tag
-    result = soup.p
-    return result.contents[0]
-
-
+    paragraph = soup.find_all(['p'])
+    result = paragraph[0].text + '\n' '\n' + paragraph[1].text
+    return result
