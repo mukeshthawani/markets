@@ -135,7 +135,7 @@
         </div>
             </section>
     </div>
-
+    <section id="search">
     <div class="col-lg-6">
         <form class="input-group" style="height: 10px">
             <input type="text" class="form-control input-lg" formaction="{% url 'stocks:search' %}" formmethod="GET" name="q" placeholder="Search for stocks(symbol)...">
@@ -154,6 +154,7 @@
             For Example "TCS", "TATAMOTORS"</p>
         {% endif %}
     </div>
+        </section>
     <div class="page-header">
         <h1> TOP 100 STOCKS
             <small> According to market capitalization</small>
